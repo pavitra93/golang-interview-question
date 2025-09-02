@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 
-	"github.com/pavitra93/machine-coding/doctors-patients-bookings/DTO"
+	"github.com/pavitra93/machine-coding/doctors-patients-bookings/dto"
 	"github.com/pavitra93/machine-coding/doctors-patients-bookings/enums/Specialization"
 	"github.com/pavitra93/machine-coding/doctors-patients-bookings/models"
 	"github.com/pavitra93/machine-coding/doctors-patients-bookings/repository"
@@ -94,12 +94,12 @@ func (service *BookingService) Cancel(bookingID int) {
 func (service *BookingService) List(specialization Specialization.Specialization, strategy strategy.SlotRankStrategy) {
 	doctors := service.DoctorRepository.FindBySpecialization(specialization)
 
-	var results []DTO.DoctorSlot
+	var results []dto.DoctorSlot
 
 	for _, doctor := range doctors {
 		for slot, avail := range doctor.Availability {
 			if avail {
-				results = append(results, DTO.DoctorSlot{
+				results = append(results, dto.DoctorSlot{
 					Doctor: doctor,
 					Slot:   slot,
 				})

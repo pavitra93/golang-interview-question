@@ -1,7 +1,7 @@
 package strategy
 
-import "github.com/pavitra93/machine-coding/doctors-patients-bookings/DTO"
+import "github.com/pavitra93/machine-coding/doctors-patients-bookings/dto"
 
 type SlotRankStrategy interface {
-	SlotRank(slots []DTO.DoctorSlot)
+	SlotRank(slots []dto.DoctorSlot)
 }

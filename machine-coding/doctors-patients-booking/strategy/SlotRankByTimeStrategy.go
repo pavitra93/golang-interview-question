@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/pavitra93/machine-coding/doctors-patients-bookings/DTO"
+	"github.com/pavitra93/machine-coding/doctors-patients-bookings/dto"
 )
 
 type SlotRankByTimeStrategy struct {
 }
 
-func (s *SlotRankByTimeStrategy) SlotRank(slots []DTO.DoctorSlot) {
+func (s *SlotRankByTimeStrategy) SlotRank(slots []dto.DoctorSlot) {
 	sort.Slice(slots, func(i, j int) bool {
 		return slots[j].Slot > slots[i].Slot
 	})
