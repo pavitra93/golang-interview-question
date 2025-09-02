@@ -1,4 +1,4 @@
-package DTO
+package dto
 
 import "github.com/pavitra93/machine-coding/doctors-patients-bookings/models"
 
